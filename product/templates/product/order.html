@@ -1,0 +1,31 @@
+{% extends "product/base.html" %}
+
+{% block content %}
+       
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">user</th>
+      <th scope="col">product</th>
+      <th scope="col">count</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for o in orders %}
+        <tr>
+            <th scope="row">{{o.order.pk}}</th>
+            <td>{{o.order.user}}</td>
+            <td>{{o.product.title}}</td>
+            <td>{{o.quantity}}</td>
+        </tr>
+    {% endfor %}
+    
+  </tbody>
+</table>
+
+
+
+{% endblock %}
